@@ -1,0 +1,27 @@
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: lightgrey;
+}
+
+.navbarcontent {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 30px;
+   
+}
+.navbar-nav{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 30px;
+}
+
+.form{
+    display: flex;
+   margin-top: 15px;
+}
