@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'restapi',
     'corsheaders',
+    'rest_framework',
+    'rest_framework_simplejwt'
 ]
 
 MIDDLEWARE = [
@@ -83,8 +85,10 @@ WSGI_APPLICATION = 'invoiceapi.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'djongo',
+        'NAME': 'InvoiceDB',
+        'HOST':'127.0.0.1',
+        'PORT':'27017'
     }
 }
 
@@ -129,3 +133,16 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'restapi.User'
+
+
+REST_FRAMEWORK = {
+
+'DEFAULT_AUTHENTICATION_CLASSES': [
+
+'rest_framework_simplejwt.authentication.JWTAuthentication'
+
+]
+
+}
